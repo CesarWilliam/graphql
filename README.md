@@ -1,2 +1,2 @@
-# graphql
-Estudos sobre GraphQL
+# GraphQL
+Repositório com estudos sobre GraphQL
