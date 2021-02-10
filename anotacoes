@@ -1,0 +1,24 @@
+Anotações GraphQL
+
+- O que é?
+Uma linguagem de consulta para APIs
+
+Anotações importantes:
+- Toda request é um POST
+- Toda request bate no MESMO endpoint (/graphql)
+- ! => significa que a propriedade é obrigatória e não pode retornar "null" 
+
+==============================================================================
+
+- Query
+Obtém as informações - GET
+
+==============================================================================
+
+- Mutation
+Manipula os dados - POST/PUT/PATCH/DELETE
+
+==============================================================================
+
+- Scalar Types (tipos primitivos)
+String, Int, Boolean, Float, ID
