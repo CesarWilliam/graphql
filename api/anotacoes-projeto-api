@@ -1,0 +1,17 @@
+Dependências utilizadas no projeto:
+- babel
+- apollo-server
+- merge-graphql-schemas
+- mongoose
+- nodemon
+
+Mongodb rodando no docker:
+- criar uma imagem do mongodb dentro do docker e rodar ele
+- comando para entrar dentro do container: docker exec -it "nome do container" bash 
+    - depois colocar o comando: mongo
+
+Alguns comando do mongodb (https://docs.mongodb.com/manual/reference/command/nav-administration/):
+- show dbs => exibir os banco de dados existentes;
+- use nome-do-database-desejado => alterar o database;
+- show collections => exibe as collections;
+- db.nome-da-collection.find() => exibe todos os dados armazenado dentro da collection;
