@@ -1,0 +1,15 @@
+<h1>Teste</h1>
+<button (click)="createUser()">criar usuário</button>
+
+<hr>
+
+<ul>
+  <li *ngFor="let user of listUsers" style="margin-bottom: 10px;">
+    <p style="margin: 0;">ID: {{ user._id }}</p>
+    <p style="margin: 0;">Ativo: {{ user.active }}</p>
+    <p style="margin: 0;">Primeiro nome: {{ user.firstName }}</p>
+    <p style="margin: 0;">Nome completo: {{ user.fullName }}</p>
+    <button (click)="updateUser(user._id)">Atualizar usuário</button>
+    <button (click)="deleteUser(user._id)">Deletar usuário</button>
+  </li>
+</ul>
