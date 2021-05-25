@@ -3,13 +3,12 @@ import { Apollo, gql } from 'apollo-angular';
 import { map } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
 
-const get_users = gql`
+const get_posts = gql`
   {
-    users {
-      _id
-      active
-      firstName
-      fullName
+    getAllPosts {
+      description
+      id
+      title
     }
   }
 `;
@@ -59,7 +58,7 @@ const delete_user = gql`
 })
 export class AppComponent implements OnInit {
 
-  listUsers: any;
+  listPosts: any[] = [];
   private querySubscription: Subscription;
 
   constructor(private apollo: Apollo) { }
@@ -75,20 +74,20 @@ export class AppComponent implements OnInit {
   getUsers() {
     this.querySubscription = this.apollo
       .watchQuery<any>({
-        query: get_users,
+        query: get_posts,
       })
       .valueChanges.subscribe(({ data, loading }) => {
-        this.listUsers = data.users;
+        this.listPosts = data.getAllPosts;
       }, (err) => {
         console.log(err);
       });
   }
 
-  createUser() {
+  createPost() {
     this.apollo
       .mutate({
         mutation: create_user,
-        refetchQueries: [{ query: get_users }],
+        refetchQueries: [{ query: get_posts }],
         variables: {
           firstName: 'Teste',
           lastName: '1',
@@ -103,11 +102,11 @@ export class AppComponent implements OnInit {
       });
   }
 
-  updateUser(idUser: string) {
+  updatePost(idUser: string) {
     this.apollo
       .mutate({
         mutation: update_user,
-        refetchQueries: [{ query: get_users }],
+        refetchQueries: [{ query: get_posts }],
         variables: {
           id: idUser,
           firstName: 'Mudei o nome',
@@ -120,11 +119,11 @@ export class AppComponent implements OnInit {
       });
   }
 
-  deleteUser(idUser: string) {
+  deletePost(idUser: string) {
     this.apollo
       .mutate({
         mutation: delete_user,
-        refetchQueries: [{ query: get_users }],
+        refetchQueries: [{ query: get_posts }],
         variables: {
           id: idUser
         }

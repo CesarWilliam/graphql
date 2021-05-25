@@ -1,15 +1,15 @@
 <h1>Teste</h1>
-<button (click)="createUser()">criar usuário</button>
+<button (click)="createPost()">Criar Post</button>
 
 <hr>
 
 <ul>
-  <li *ngFor="let user of listUsers" style="margin-bottom: 10px;">
-    <p style="margin: 0;">ID: {{ user._id }}</p>
-    <p style="margin: 0;">Ativo: {{ user.active }}</p>
-    <p style="margin: 0;">Primeiro nome: {{ user.firstName }}</p>
-    <p style="margin: 0;">Nome completo: {{ user.fullName }}</p>
-    <button (click)="updateUser(user._id)">Atualizar usuário</button>
-    <button (click)="deleteUser(user._id)">Deletar usuário</button>
+  <h2>Lista de Posts:</h2>
+  <li *ngFor="let post of listPosts" style="margin-bottom: 10px;">
+    <p style="margin: 0;">ID: {{ post.id }}</p>
+    <p style="margin: 0;">Title: {{ post.title }}</p>
+    <p style="margin: 0;">Description: {{ post.description }}</p>
+    <button (click)="updatePost(post.id)">Atualizar Post</button>
+    <button (click)="deletePost(post.id)">Deletar Post</button>
   </li>
 </ul>
