@@ -1,0 +1,6 @@
+Passos iniciais para gerar o projeto:
+- npm init -y
+- npm i express apollo-server-express graphql mongoose
+- npm i -D nodemon
+- no package.json criar o comando 'dev' para rodar o nodemon
+- npm run dev - inicia o servidor
